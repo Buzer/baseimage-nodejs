@@ -6,5 +6,5 @@ FROM phusion/baseimage:0.9.17
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update && apt-get dist-upgrade -y && curl -sL https://deb.nodesource.com/setup_0.12 | bash - && apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
